@@ -1,0 +1,51 @@
+/*
+  Map :
+  ________
+
+  -  It is used to create an array.
+  -  It takes value, index, and array in parameter.
+*/
+
+
+//------ practice map
+let array = [1, 9, 2, 8, 3, 7, 4, 6];
+
+let myMap = array.map((value) => {
+  return value + 2;
+});
+
+// or
+
+let newMap = array.map((value, index, array)=>{
+  console.log(`${value} at index : ${index} of array : 
+ [ ${array} ]`) ;
+}) ;
+
+console.log(myMap);
+
+
+
+//------ practice filter
+
+let arr2 = [1, 9, 2, 8, 3, 7, 4, 6];
+
+console.log("new array with values less than 7 are : ") ;
+
+let newArr2 = arr2.filter((value) =>{
+  return (value < 7) ;
+}) ;
+
+console.log(newArr2) ;
+
+
+
+
+//------ practice reduce
+
+arr2 = [1, 9, 2, 8, 3, 7, 4, 6];
+
+let answer = arr2.reduce((value1, value2)=>{
+  return value1+value2 ;
+});
+
+console.log(answer) ;

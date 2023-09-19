@@ -1,0 +1,49 @@
+/*
+    Some Important Attribute Methods :
+    ________________________________________
+*/
+
+//  to get the value of a particular attribute.
+let findingClassOfFirstDiv = document.getElementById("first").getAttribute("class") ;
+console.log("The class name of first div is : " + findingClassOfFirstDiv) ;
+
+//  to get the attributes of a tag.
+console.log(document.getElementById("first").attributes) ;
+
+let firstDiv = document.getElementById("first") ;
+console.log(firstDiv.hasAttribute("class")) ;       //  to check whether the element contains a particular attribute or not.
+
+//  Setting the attribute of any tag.
+let lastDiv = document.getElementById("forth") ;
+lastDiv.setAttribute("hidden", "true") ;
+
+//  Removing the attribute of any tag.
+lastDiv.removeAttribute("hidden") ;
+
+//  lets suppose, we want to create an element of div
+let myDiv = document.createElement("div") ;
+myDiv.innerHTML = "This is created using JS" ;
+document.body.appendChild(myDiv) ;                  //  now, pushing it into required place.
+document.body.append(myDiv) ;
+document.body.prepend(myDiv) ;                      //  to push at the starting.
+// document.body.before(myDiv) ;                      //  to push at the starting.
+// document.body.after(myDiv) ;                      //  to push at the starting.
+// document.getElementById("forth").replaceWith(myDiv) ;
+
+
+let target = document.getElementById("first") ;
+target.insertAdjacentHTML("beforebegin", '<div id="zero1" class="childrens">This is zero1.</div>') ;
+target.insertAdjacentHTML("afterbegin", '<div id="zero2" class="childrens">This is zero2.</div>') ;
+target.insertAdjacentHTML("beforeend", '<div id="zero3" class="childrens">This is zero3.</div>') ;
+target.insertAdjacentHTML("afterend", '<div id="zero4" class="childrens">This is zero4.</div>') ;
+
+//  Removing element
+document.getElementById("zero1").remove();
+document.getElementById("zero4").remove();
+
+//  Adding, changing and removing the class of any element.
+document.getElementById("zero2").classList.add("zeros");
+document.getElementById("zero2").classList.replace("zero");
+document.getElementById("zero2").classList.remove("zero");
+document.getElementById("zero2").classList.toggle("zero");
+document.getElementById("zero2").classList.contains("zero");

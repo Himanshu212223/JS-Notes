@@ -1,0 +1,69 @@
+/*
+    Promise in JS :
+    _______________________________
+
+    -   Promise is used so that suppose you want to load some script or anything from some other source,
+        so, if it gets loaded successfully, then, the resolve of the promise gets executed, else, the 
+        reject of the promise gets executed automatically.
+     -  Promise is like a thread of java, as since, another function gets called when one function gets 
+        completely executed....
+        But, all the promise gets executes at the same time.
+        It does not wait for the execution of method defined before it.
+*/
+
+// -------------------------------- Event Listner in JS -----------------------
+
+let promise = new Promise(function(resolve, reject){
+    console.log("Executing the Promise.") ;
+    resolve("Working successfully.") ;
+    reject("!!!!!!! Error !!!!!!!!!!! ") ;
+});
+
+console.log(promise) ;
+
+//  another example 
+
+let promise2 = new Promise(function(resolve, reject){
+    console.log("------ FETCHING THE URL FROM GOOGLE -----------------") ;
+    resolve(true) ;
+    reject(false) ;
+}) ;
+
+promise.then((value) =>{
+    console.log(value) ;
+});
+
+promise.catch((error)=>{
+    console.log("Got some errors ") ;
+}) ;
+
+//  same as above
+promise2.then((value) =>{
+    console.log(value) ;
+},(error)=>{
+    console.log("Got some errors ") ;
+}) ;
+
+
+
+//-------------- Promise Chaining -------------------------------
+
+//  Promise 1
+let p1 = new Promise((resolve, reject) =>{
+    console.log("Done with promise p1 ") ;
+    resolve("done with p1") ;
+}) ;
+
+p1.then((value)=>{
+    console.log(value) ;
+
+    //  Promise 2 inside the then of promise1
+    let p2 = new Promise((resolve, reject)=>{
+        console.log("Done with promise p2 ") ;
+        resolve("done with p2") ;
+    }) ;
+    return p2 ;
+
+}).then((value2)=>{
+    console.log(value2) ;
+});

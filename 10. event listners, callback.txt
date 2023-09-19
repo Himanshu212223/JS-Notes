@@ -1,0 +1,36 @@
+/*
+    DOM Events
+    CallBack : It is nothing but passing a function as an argument in some other function.
+*/
+
+// -------------------------------- Event Listner in JS -----------------------
+
+let func1 = ()=>{
+    console.log("You clicked in Div1") ;
+} ;
+
+let div1 = document.getElementById("first") ;
+div1.addEventListener('click', func1) ;
+// div1.removeEventListener('click', func1) ;
+
+let div2 = document.getElementById("second") ;
+div2.addEventListener('click', function(e){
+    console.log(e.type) ;
+    console.log(e.target) ;
+    console.log(e.clientX) ;
+    console.log(e.clientY) ;
+}) ;
+
+
+//  --------------------------------- CALLBACK IN JS ---------------------------
+
+function displayInConsole(str, callback){
+    console.log(str) ;
+    callback() ;
+}
+
+function displayAnotherMessage(){
+    console.log("SHOW THIS MESSAGE TOO. ") ;
+}
+
+displayInConsole("Print this in the console.", displayAnotherMessage) ;

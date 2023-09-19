@@ -1,0 +1,10 @@
+/*
+    Imediately Invoke Function Element.
+    ____________________________________
+
+	-	There are those function which gets invoked just after its definition.
+*/
+
+(executeOnTheSpot => {
+    console.log("Print this");
+})();

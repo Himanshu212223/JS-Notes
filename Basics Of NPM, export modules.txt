@@ -1,0 +1,47 @@
+NPM : Node Package Manager, helps to manager all the required packages.
+
+commands :
+_______________
+
+npm init 		: to create a project using npm.
+
+npm init -y 	: to create a project directly.
+
+npm install run 	: it is used so that when we shift the project, then, npm will look for the required dependencies in the package file, and install them.
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::: Modules in JS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Suppose File name is module1.js
+____________________________________
+
+const hello = () =>{
+	console.log("This is module 1 " );
+}
+
+
+const ahello = () =>{
+	console.log("This is aHello" );
+}
+
+module.exports  = {hello, ahello} ;
+
+
+
+
+Suppose File name is module2.js, and, here, we want to use module1
+_________________________________________________________________________
+
+const h = require("./module1") ;
+h.hello() ;
+h.ahello() ;
+
+
+--------------- OR -----------------
+
+const {hello, ahello} = require("./module1") ;
+hello() ;
+ahello() ;

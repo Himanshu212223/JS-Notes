@@ -1,0 +1,27 @@
+/* 
+Functions in JS :
+---------------------------------
+
+-   The functions should start with funtion keyword.
+-   We can also make a function using variables and arrow functions, but, it should not use function keyword, and should be stored in a variable.
+-   We do not have to define variable type (var, let, const) in the parameter or signature of the function definition.
+    we just have to use the variable directly.
+
+*/
+
+//  Basic Function
+//--------------------------------------------------------
+function displayName1(userName){
+    console.log(`${userName}`);
+}
+
+displayName1('Himanshu') ;
+
+
+//  Function as variable using arrow function.
+//--------------------------------------------------------
+let displayName2 = (userName) => {
+    console.log(`${userName}`) ;
+};
+
+displayName2('Himanshu')  ;

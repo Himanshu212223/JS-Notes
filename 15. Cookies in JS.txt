@@ -1,0 +1,27 @@
+/*
+    Cookies in JS :
+    size is 4 KB.
+*/
+
+
+//  to get all the cookies : -
+console.log(document.cookie) ;
+
+//  to add a new cookie in the list of cookies : -
+document.cookie = "name = Himanshu" ;
+
+//  to update the existing cookie in the list of cookies : -
+document.cookie = "name = Saurabh" ;
+
+//  lets set a key value pair of cookie entered by users :
+let key = prompt("Enter your cookie key : ") ;
+let value = prompt("Enter the value of the cookes : ")
+document.cookie = `${encodeURIComponent(key)} = ${encodeURIComponent(value)}` ;
+//  we are using encodeURIComponent here because the key, value entered by user can be a special character and should not create mess while understanding by js.
+
+console.log(decodeURIComponent(key)) ;
+
+//  setting a cookie which gets expire on some day.
+document.cookie = 'Name = Akbar ; expires = Wed, 29 March 2023 12:05:00 GMT' ;
+
+console.log(document.cookie) ;

@@ -1,0 +1,23 @@
+/*
+    BOM (Browser Object Model) and DOM (Document Object Model) :
+    _______________________________________________________________
+
+    - window object is the global object of js.
+        so, if we write window.console.log("Hii");
+        is same as writing without using the window.
+
+    - this window have 3 features :-
+        1. DOM
+        2. BOM
+        3. JS Core
+
+    - The whole html page is considered as Document and is given to JS as JS-Document called as DOM.
+    - BOM is nothing but additional objects provided by the browser.
+*/
+
+// DOM
+window.console.log("This is using window") ;
+console.log("This is without using window.") ;
+
+// BOM
+location.href = "https://www.google.com/" ;

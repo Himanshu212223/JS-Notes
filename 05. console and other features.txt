@@ -1,0 +1,70 @@
+/*
+    console Methods of JS
+    ________________________________
+    console.dir
+    console.log
+    console.info
+    console.warn
+    console.error
+    console.assert
+    console.time
+    console.timeEnd
+
+    alert
+    prompt
+    confirm
+*/
+//	to get anything like a object, 
+console.dir("This is object") ;
+console.log("Print this is the console.");
+console.info("This is just an information.");
+console.warn("I am warning you, so be attentive.");
+console.error("Print this is the error.");
+console.assert(5 < 10) ;        //  if true, wouldn't show anything.
+console.assert(5 > 10) ;        //  if false, reflect that in console.
+
+// console.clear() ;            //  to clear console.
+
+let myObject = {
+    Anubhav : 22,
+    Sandeep : 24,
+    Saurabh : 25
+};
+
+console.table(myObject) ;       //  Show data in tabular form.
+
+console.time("Measuring time to print some stuff.") ;
+console.log("print work 1") ;
+console.log("print work 2") ;
+console.log("print work 3") ;
+console.log("print work 4") ;
+console.timeEnd("Measuring time to print some stuff.") ;
+
+
+// lets compare the time taken by for and while loop
+
+console.time("time taken by for loop ...") ;
+for(let i = 1 ; i<=10 ; i ++){
+    continue;
+}
+console.timeEnd("time taken by for loop ...") ;
+
+
+
+console.time("time taken by while loop ...") ;
+let j = 1; 
+while(j<=10){
+    j++;
+    continue;
+}
+console.timeEnd("time taken by while loop ...") ;
+
+
+alert("Hello, your code get loaded completely.") ;
+
+let val1 = prompt("Please enter your age : ", 1) ;
+val1 = Number.parseInt(val1) ;
+
+let confirmation = confirm("Have you provided your correct age ....?");
+
+document.write(`Your age is ${val1}, and the age provided by you is ${confirmation}`) ;

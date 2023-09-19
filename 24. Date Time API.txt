@@ -1,0 +1,25 @@
+/*
+    Date Time API in JS :
+    _______________________________________
+*/
+
+let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+let months = ["Januray", "February", "March", "Arpil", "May", "June", "July",
+                "August", "September", "October", "November", "December"
+];
+
+
+let dateVariable = new Date() ;
+
+let date = dateVariable.getDate() ;
+let day = dateVariable.getDay() - 1;
+let month = dateVariable.getMonth();
+let yr = dateVariable.getFullYear();
+
+let hr = dateVariable.getHours();
+let min = dateVariable.getMinutes() ;
+let sec = dateVariable.getSeconds();
+let milisec = dateVariable.getMilliseconds();
+
+console.log(`Date is : ${days[day]} ${date}, ${months[month]}, ${yr}`) ;
+console.log(`Time is : ${hr} : ${min} : ${sec} : ${milisec}`) ;

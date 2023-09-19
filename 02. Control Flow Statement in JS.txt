@@ -1,0 +1,143 @@
+/* 
+Control Flow Statements :
+---------------------------------
+
+*/
+
+let val1 = 34 ;
+let val2 = '34' ;
+
+let arr = [1, 6, 5, null, 92, 8] ;
+
+let obj = {
+    Anubhav : 21 ,
+    Saurabh : 23 ,
+    Sandeep : 24
+} ;
+
+
+//  if-else statement
+//-------------------------------
+
+if(val1 == val2){
+    console.log(`${val1} == ${val2}`) ;
+}
+else{
+    console.log(`${val1} != ${val2}`) ;
+}
+console.log('\n\n') ;
+
+
+//  if-else if - else statement
+//-------------------------------
+
+if(val1 === val2){
+    console.log(`${val1} === ${val2}`) ;
+}
+else if(val1 == val2){
+    console.log(`${val1} == ${val2}`) ;
+}
+else{
+    console.log(`${val1} != ${val2}`) ;
+}
+console.log('\n\n') ;
+
+
+//  Switch Statement
+//-------------------------------
+
+switch(val1){
+    case 34 : console.log(`${val1} == 34 with switch`) ;
+    break ;
+    case '34' : console.log(`${val1} == '34' with switch`) ;
+    break;
+    default : console.log(`Does not matches with any cases.`) ; 
+}
+console.log('\n\n') ;
+
+
+//  For Statement
+//-------------------------------
+for(let i=0; i<arr.length; i++){
+    console.log(`${arr[i]} using For statement`) ;
+}
+console.log('\n\n') ;
+
+
+//  For in Statement    (cannot be used with objects)
+//-------------------------------
+
+for(let element in arr){
+    console.log(`${element} using For in Statement.`) ;
+}
+console.log('\n\n') ;
+
+
+//  For of Statement    
+//-------------------------------
+
+for(let element of arr){
+    console.log(`${element} using For of Statement.`) ;
+}
+console.log('\n\n') ;
+
+
+//  For each Statement
+//-------------------------------
+arr.forEach((element) => {
+    console.log(`${element} using forEach statement.`) ;
+});
+console.log('\n\n') ;
+
+
+//  while Statement
+//-------------------------------
+let index = 0 ;
+
+while(index < arr.length){
+    console.log(`${arr[index]} using while loop.`);
+    index+=1 ;
+}
+console.log('\n\n') ;
+
+
+//  do-while Statement
+//-------------------------------
+index = 0 ;
+do{
+    console.log(`${arr[index]} using do-while loop.`) ;
+    index += 1 ;
+}while(index < arr.length) ;
+console.log('\n\n') ;
+
+
+
+//***************************** Loop on Object ****************************************
+
+for(let key in obj){
+    console.log(`${key} : ${obj[key]}`) ;
+}
+console.log('\n\n') ;
+
+//  FOR OF LOOP DOES NOT WORK ON OBJECT
+// for(let key of object){
+//     console.log(`${key} : ${object[key]}`) ;
+// }
+
+let keys = Object.keys(obj);                                    //  To get all the keys
+console.log(keys) ;
+
+keys.forEach((key, index) => {
+    console.log(`${index} - ${key} : ${obj[key]}`) ;
+});
+console.log('\n\n') ;
+
+
+
+let values = Object.values(obj) ;                               //  To get all the values
+console.log(values) ;
+
+values.forEach((value, index) => {
+    console.log(`${index} - ${value}`) ;
+}) ;
+console.log('\n\n') ;

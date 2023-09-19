@@ -1,0 +1,20 @@
+/*
+    Closure in JS
+    ___________________________
+
+    It is nothing but when a function is returning a function which is defined inside it.
+    It not only returns the function, but, also returns all the reference variables used with it.
+*/
+
+function init(){
+    let name = "Sandeep" ;
+    
+    function newName(){
+        console.log(`The name is ${name}`) ;
+    }
+
+    return newName ;
+}
+
+let returnedVal = init() ;
+returnedVal();

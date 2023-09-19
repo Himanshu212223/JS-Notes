@@ -1,0 +1,11 @@
+/*
+	   Audio in JS 
+	_________________________________
+*/
+
+let alarm = new Audio("https://actions.google.com/sounds/v1/alarms/radiation_meter.ogg") ;
+
+setTimeout(()=>{
+    console.log("Playing audio ") ;
+    alarm.play();
+}, 2000);

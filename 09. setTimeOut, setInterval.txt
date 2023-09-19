@@ -1,0 +1,46 @@
+/*
+    setTimeout :
+    
+    -   It is used to execute a particular code after some time.
+    -   It is not like the delay, as it let the other code gets executed.
+
+    setInterval :
+
+    -   It is used to exeucte a particular code after particular interval of time.
+    ________________________________________
+*/
+
+/*
+    setTimeout(function(){
+            alert("Try again after 5 seconds... ") ;
+        }, 5000) ;
+*/
+
+
+// Example :-
+console.log("We are here at the starting") ;
+
+let lateExecution = setTimeout(function(){
+    console.log("writing this after 5 seconds") ;
+}, 5000);
+
+console.log("We are at the end now") ;
+
+clearTimeout(lateExecution) ;                   //  to cancel the execution of setTimeOut
+
+//  Example 2 :-
+
+let sum = (x, y) =>{
+    console.log( "Printing the sum after 2 seconds : "+ (x+y)) ;
+}
+
+setTimeout(sum, 2000, 5, 3) ;                   //  arguments are: functionToExecute, delayTime, arguments of function
+
+
+//-------------------   Example of SetInterval
+
+let intervalId = setInterval(() => {
+    console.log("Greeting you after every 5 seconds....");
+}, 5000);
+
+clearInterval(intervalId); 

@@ -1,0 +1,47 @@
+/*
+    Destructuring in JS : 
+    ____________________________________
+*/
+
+
+//-------------------- Destructuring ---------------------------------------------
+let arr = [1, 9, 2, 8] ;
+let [a, b, c, d] = arr ;    // This will auto initialize 
+
+console.log(a, b, c, d) ;
+
+let newArr = [1, 9, 2, 8, 3, 7, 4, 6, 5] ;
+let [e, f, g, ...restElement] = newArr ;
+
+console.log(e, f, g, restElement) ;
+console.log("the type of restElement is " + typeof(restElement)) ;
+
+
+let [h, , , ...restElement2] = newArr ;
+console.log(h, restElement2) ;
+
+
+let {v1, v2} = {v1 : 4, v2 : 6} ;
+console.log(v1, v2) ;
+
+
+//-------------------- Spread ---------------------------------------------
+
+//  to convert the array to object.
+const arr2 = [1, 2, 6, 4, 7];
+const obj1 = {...arr2} ;
+console.log("type of obj1 is " + typeof(obj1) );
+
+function PassingArray2(v1, v2, v3, v4, v5){
+    console.log(v1 + v2 + v3 + v4 + v5) ;
+}
+
+PassingArray2(...arr2) ;
+
+let obj2 = {
+    name : 'Saurabh' ,
+    company : "CTS",
+     age : 23
+} ;
+
+console.log({...obj2, company : "Infosys"}) ;

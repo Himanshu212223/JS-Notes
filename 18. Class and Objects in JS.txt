@@ -1,0 +1,60 @@
+/*
+    Class and Object in JS :
+    ____________________________________
+
+    -   Constructors gets executed once the object is created.
+    -   Static things will get executed even before the constructor.
+*/
+
+
+class Car{
+
+    constructor(){
+        console.log("Hiii... This is constructor..") ;
+    }
+
+    model = (string)=>{
+        console.log(`The current model is ${string}`);
+    } ;
+};
+
+let audi = new Car() ;
+audi.model("Audi R8");
+
+//  Inheritance in JS 
+
+class Animal{
+    constructor(name, color){
+        this.name = name ;
+        this.color = color ;
+    }
+
+    run(){
+        console.log(`The Animal is ${this.name}, and its color is ${this.color}`) ;
+    }
+};
+
+
+
+class Monkey extends Animal{
+    constructor(...args){
+        super(...args);
+    }
+
+    static staticMethod(){
+        console.log("This method is static and doesn't belong to any object, instead belongs to class.") ;
+    }
+
+    eats(){
+        super.run() ;
+        console.log(`The Animal is ${this.name}, its color is ${this.color}, and eats Banana. `) ;
+    }
+};
+
+
+let monkey1 = new Monkey("Chomu", "Red") ;
+monkey1.eats();
+
+
+// ----- calling static method of a Class.
+Monkey.staticMethod() ;

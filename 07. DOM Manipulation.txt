@@ -1,0 +1,79 @@
+/*
+    Basic of DOM Manipulation :
+    ________________________________________
+*/
+
+
+//  Accessing the childs of body tag
+console.log("first child of body is : "); 
+console.log(document.body.firstChild) ;
+console.log("type of firstChild is : " + typeof(document.body.firstChild)) ;
+console.log("to convert the firstChild from object to array is " + Array.from(document.body.firstChild)) ;
+
+console.log("last child of body is : ") ;
+console.log(document.body.lastChild) ;
+console.log("type of lastChild is : " + typeof(document.body.lastChild)) ;
+console.log("to convert the lastChild from object to array is " + Array.from(document.body.lastChild)) ;
+
+//  Accessing the childs nodes of body tag
+console.log("last child nodes of body is : ") ;
+console.log(document.body.childNodes) ;
+console.log("type of child nodes is : " + typeof(document.body.childNodes)) ;
+let childNodeArray = Array.from(document.body.childNodes) ;
+console.log("to convert the child nodes from object to array is " + childNodeArray) ;
+
+//  Accessing the element childs of body tag
+console.log("first element child of body is : ") ;
+console.log(document.body.firstElementChild) ;
+console.log("type of first element child is : " + typeof(document.body.firstElementChild)) ;
+console.log("last element child of body is : ") ;
+console.log(document.body.lastElementChild) ;
+console.log("type of last element child is : " + typeof(document.body.lastElementChild)) ;
+
+//  Accessing the parent of childs of body tag
+console.log("fetching the parent of body tag : ") ;
+console.log(document.body.parentElement) ;
+console.log(document.body.parentNode) ;
+
+//  Accessing the element by its Id.
+let firstDiv = document.getElementById("first") ;
+firstDiv.style.color = "red" ;                      //  changing the css using js.
+
+//  Accessing the element by its Class name.
+let allDivs = document.getElementsByClassName("childrens") ;
+for(let i of allDivs){
+    i.style.color = "teal" ;
+}
+
+//  Accessing the element using CSS Query selector.
+let secondDiv = document.querySelector("#second") ;
+secondDiv.style.color = "purple" ;
+
+let allDivs2 = document.querySelectorAll(".childrens") ;
+for(let i of allDivs2){
+    i.style.color = "orange" ;
+}
+
+//  to get all those divs which are present in the body.
+console.log(document.body.getElementsByTagName("div") ) ;
+
+//  to check whether the element you are selecting have the required class or not.
+let thirdDiv = document.getElementById("third") ;
+console.log(thirdDiv.matches(".childrens") ) ;
+
+//  to check whether the element you are selecting have the required class or not.
+console.log(document.getElementById("first").closest("#first") ) ;
+
+//  to check whether the element you are selecting contains some required elements or not.
+console.log(document.body.contains(document.getElementById("third") ) ) ;
+
+//  to get the innerHTML of any particular tag.
+console.log(document.body.innerHTML) ;
+
+//  to get the outerHTML of any particular tag.
+console.log(document.getElementById("first").outerHTML) ;
+
+//  to get the whole page as text content.
+console.log(document.body.textContent) ;
+
+console.log("The data of first child is : "+ document.firstElementChild.data) ;

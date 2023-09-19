@@ -1,0 +1,22 @@
+/*
+    Prototype in JS :
+    ________________________
+
+    -   If we want some properties of one object gets copied into some other object, we use __proto__.
+*/
+
+let a = {
+    name : "Himanshu" ,
+    language : "JavaScript" 
+} ;
+
+let p = {
+    run : () =>{
+        console.log("Executing the run method of p.") ;
+    }
+}
+
+a.__proto__ = p ;
+//  This above line will copy the run method to object a also.
+
+a.run()

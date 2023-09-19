@@ -1,0 +1,38 @@
+/*
+    Fetch API :-
+    _______________________
+
+    -   Fetch always return a promise.
+*/
+
+// ------------ Just an example of how to ues Fetch API ------------------------------------
+
+let p = fetch("https://goweather.herokuapp.com/weather/Ny") ;
+p.then((responses)=>{
+    console.log(responses.headers) ;
+    console.log(responses.ok) ;
+    console.log(responses.status) ;
+    return responses.json() ;
+}).then((value)=>{
+    console.log(value) ;
+});
+
+//  ------------- Post Operation using Fetch API ---------------------------------------------
+
+let options = {
+    method : "POST" ,
+    headers : {
+        "Content-type" : "application/json"
+    },
+    body : JSON.stringify({
+        title : 'foo' ,
+        body : 'bar' ,
+        userId : 1,
+    }),
+}
+
+fetch('https://jsonplaceholder.typicode.com/posts', options).then((response) => {
+    return response.json() ;
+}).then((json) => {
+    console.log(json) ;
+});

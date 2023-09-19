@@ -1,0 +1,31 @@
+/*
+    Try-Catch, Errors, and Custom Errors in JS:
+*/
+
+//  try-Catch
+try{
+    console.log(variableName) ;
+}
+catch(error){
+    console.log(error + ", Variable you are trying to use is not defined.") ;
+}
+
+
+try{
+    let age = prompt("Enter the age", "Number only") ;
+    age = Number.parseInt(age);
+    if(age > 150 ){
+        throw new Error("This age is probably not Possible..... ") ;
+    }
+    else{
+        console.log(age) ;
+    }
+}
+catch(error){
+    console.log(error);
+    console.log(error.name) ;
+    console.log(error.message) ;
+}
+finally{
+    console.log("----------- Wow, reached in Finally.------------------") ;
+}

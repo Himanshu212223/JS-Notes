@@ -1,0 +1,117 @@
+/* 
+Java Script Variables :
+---------------------------------
+
+-   JS is a dynamic language, which means, which type of value a variable is storing can be changed in runtime.
+-   There are 3 Types of Variables used in JS :-
+    1. var :    It has global scope, used previously, and is considered as bad practice as it can create bug
+                in the code. How var can create bug ..? Because var can be re-declared.
+    2. let :    It has block level scope, and is used to declare variables.
+    3. const :  It is used to declare constants, and have block level scope.
+
+-   PRIMITIVE DATATYPES :
+    1. Null
+    2. Number
+    3. Symbol 
+    4. String
+    5. Boolean
+    6. BigInt
+    7. Undefined
+
+    >   Strings are immutable, i.e., we cannot make changes in the strings, any changes in string creates
+        a new String and store it in same variable.
+    
+    >   Delete operation on array will delete the elements from the array but the length of the array remains same
+        as null value gets placed in position of deleted element.
+        
+    >   Concat method of array creates a new array.
+
+    >   Sort method of array will sort or modify the original array but it consider the array elements as String and then perform the sorting operation.
+        Ex : 2 and 202 will come before 3.
+
+-   NON-PRIMITIVE DATATYPES are the objects in JS, which stores data in key-value pair form.
+
+    >   Array.from() is used to convert the object to an array.
+
+*/
+
+var variable1 = 34 ;
+var variable1 = 'This is statement.' ;      //  re-declaration of var which can create error.
+
+let variable2 = 34 ;
+
+const PASSWORD = 'gm@il' ; 
+
+console.log(variable1, variable2, PASSWORD) ;
+console.log(`variable1 is: ${variable1}, variable2 is: ${variable2}, and const is: ${PASSWORD}`) ;
+
+//****************************** PRIMITIVE DATATYPES ***********************************************
+
+let var1 = null ;
+let var2 = 34 ;
+let var3 = Symbol("This is Symbol.");
+let var4 = 'This is String' ;
+let var5 = true ;
+let var6 = BigInt(34) ;
+let var7 = undefined ;
+
+console.log(`The type of ${var1} is : ${typeof(var1)}`) ;
+console.log(`The type of ${var2} is : ${typeof(var2)}`) ;
+console.log(`The type of `,var3, ' is : ',typeof(var3)) ;
+console.log(`The type of ${var4} is : ${typeof(var4)}`) ;
+console.log(`The type of ${var5} is : ${typeof(var5)}`) ;
+console.log(`The type of ${var6} is : ${typeof(var6)}`) ;
+console.log(`The type of ${var7} is : ${typeof(var7)}`) ;
+
+//------------- STRING METHODS ----------------------------------
+let strings = '       This is tje statement.';
+console.log(strings.length) ;                   //  string property
+console.log(strings.toUpperCase()) ;            //  string methods
+console.log(strings.toLowerCase()) ;
+console.log(strings.slice(2, 18)) ;             //  from index 2 to index 18 excluding 18th index.
+console.log(strings.replace('tje', 'the')) ;
+console.log(strings.concat(' Now, adding this statements at the end.')) ;
+console.log(strings.trim()) ;                   //  it will removes the white spaces from start and end.
+
+strings[1] = 'L' ;                              //  trying to replace value of particular index, but, string is immutable.
+console.log(strings) ;
+
+//------------- ARRAY ----------------------------------
+let myArray = [1, 6, 3, 4, 'Hii', 9, 7, 8, null, 23] ;
+
+console.log(`The length of the array [ ${myArray} ] is : ${myArray.length}`) ;
+delete myArray[2] ;
+console.log(`The length of the array [ ${myArray} ] is : ${myArray.length}`) ;
+
+console.log(`Type of Array is : ${typeof(myArray)}`) ;
+
+myArray.push(123) ;                             //  push at the end
+myArray.unshift(321) ;                          //  push at the start
+myArray.pop() ;                                 //  pop from the end
+myArray.shift() ;                               //  pop from the start
+
+console.log(myArray) ;
+
+// ------- sorting the array -------
+
+let compareElements = (x, y)=>{
+    return x-y ;
+}
+
+myArray.sort(compareElements) ;
+myArray.reverse() ;
+myArray.splice(3, 2, 56, 78, 99, 876) ;         //  start from index 3, remove 2 elements, and add the rest elements at the same position.
+console.log(myArray.slice(3, 5)) ;
+
+console.log(myArray) ;
+
+
+//****************************** NON-PRIMITIVE DATATYPES ***********************************************
+
+const dataCollection = {
+    'Himanshu' : 22 ,
+    'Anubhav'  : 23 ,
+    'Saurabh'  : 24 
+};
+
+console.log(`The Age of Himanshu is ` + dataCollection['Himanshu']) ;

@@ -1,0 +1,43 @@
+/*
+    Async Functions :
+    __________________________
+
+    -   Async functions is a type of function which act as a promise.
+    -   It returns the value like the promise does.
+*/
+
+
+async function displayInConsole() {
+    return ("Done printing");
+}
+
+displayInConsole().then((value) => {
+    console.log(value);
+});
+
+
+//  Some times, it is required to make the promise wait.
+
+async function weatherForcast() {
+    // let delhi weather is responding in 3 seconds
+    let delhiWeather = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("23 degree");
+        }, 3000);
+    });
+
+    // let banglore weather is responding in 5 seconds
+    let bangloreWeather = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("18 degree");
+        }, 5000);
+    });
+
+    let delhiW = await delhiWeather ;
+    let bangloreW = await bangloreWeather ;
+
+    return [delhiW, bangloreW] ;
+};
+
+console.log("Weather forcase of Cities : ") ;
+console.log(weatherForcast()) ;

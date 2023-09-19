@@ -1,0 +1,28 @@
+/*
+    Getters and Setters in JS:
+    ____________________________________
+*/
+
+class Animal{
+    constructor(name, age){
+        this.name = name  ;
+        this.age = age ;
+    }
+
+    get name(){
+        return this._name;
+    }
+    set name(newName){
+        this._name = newName ;
+    }
+
+    get age(){
+        return this._age ;
+    }
+    set age(newAge){
+        this._age = newAge ;
+    }
+};
+
+let parrot = new Animal("Parrot", 12) ;
+console.log(parrot.name) ;

@@ -1,0 +1,60 @@
+/*
+    Local Storage :
+    _____________________
+    -   It is necessary to store the data in string form
+        i.e., the key and values should be string only.
+    -   If want to store the object in local storage, use json.stringify to convert the object into string.
+        Then receive it and convert that string into object using json.parse
+        
+    Session Storage : 
+    _____________________
+    -   Session storage survive till the time tab is open.
+*/
+
+//----------------------------------- Local Storage ------------------------------------------------
+
+console.log(localStorage) ;
+
+
+//  Setting key value pair in local storage
+localStorage.setItem("name", "Himanshu") ;
+
+
+//  getting the value by passing the key in local storage
+console.log("Fetching the value form the Local Storage as " + localStorage.getItem("name")) ;
+
+
+//  getting the value by passing the key in local storage
+localStorage.removeItem("name") ;
+console.log("now, the value from local storage is deleted.") ;
+console.log(localStorage) ;
+
+
+let index = 5 ;
+console.log(localStorage.key(index) ) ;
+
+
+//  to clear the whole local storage.
+localStorage.clear(); 
+
+//  if we want a message gets displayed when local storage changed from any site or tab.
+window.onstorage = (e) =>{
+    console.log("Updated the local storage " + e ) ;
+};
+
+
+//----------------------------------- Session Storage ------------------------------------------------
+
+console.log(sessionStorage) ;
+
+
+//  Setting key value pair in local storage
+sessionStorage.setItem("name", "Himanshu") ;
+
+
+//  getting the value by passing the key in local storage
+console.log("Fetching the value form the Session Storage as " + sessionStorage.getItem("name")) ;
+
+sessionStorage.removeItem("name") ;
+
+sessionStorage.clear() ;

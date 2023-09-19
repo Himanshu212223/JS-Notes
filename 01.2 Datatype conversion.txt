@@ -1,0 +1,19 @@
+/* 
+DataType Conversion :
+---------------------------------
+
+*/
+
+let val1 = 45 ;
+let val2 = '56' ;
+let val3 = BigInt(87) ;
+
+let val4 = Number(val2) ;
+let val5 = String(val1) ;
+let val6 = Number(val3) ;
+let val7 = String(val3) ;
+
+console.log(`${val4} has type as : ${typeof(val4)}`)
+console.log(`${val5} has type as : ${typeof(val5)}`)
+console.log(`${val6} has type as : ${typeof(val6)}`)
+console.log(`${val7} has type as : ${typeof(val7)}`)
