@@ -1,0 +1,51 @@
+Node JS :
+
+-   Node js is nothing but JS running on server.
+-   It works on the principle of REPL (Read Evaluate Print Loop) .
+-   It is built on Chrome's V8 JS engine (Chrome brower uses this engine to compile JS in browser) .
+
+
+To create the package of Node.js, use the command :
+---------------------------------------------------
+
+npm init
+
+
+Suppose, if we have a Node project without node_module file, and we want to install the required files,
+-------------------------------------------------------------------------------------------------------
+
+npm install
+
+
+Process to read File : 
+______________________________
+
+-   For performing CRUD operation, we have to require the 'fs' module first.
+-   There are 2 ways to perform the File handling operation:
+    1. Synchronous  : wait until the whole file is fetched.
+    2. Asynchronous : let the rest of code get executed till the time file is getting fetched.
+
+-   Synchnonous :
+    For READ, use 'readFileSync' method of fs module.
+    For UPDATE, use 'appendFileSync' method of fs module.
+    For WRITE, use 'writeFileSync' method of fs module.
+    For DELETE, use 'unlinkSync' method of fs module.
+
+-   Asynchronous :
+    For READ, use 'readFile' method of fs module, with a call-back method.
+    For UPDATE, use 'appendFile' method of fs module, with a call-back method.
+    For WRITE, use 'writeFile' method of fs module, with a call-back method.
+    For DELETE, use 'unlink' method of fs module, with a call-back method.
+
+
+Process to Create Server : 
+______________________________
+
+-   For creating Server, we have to require the http module first.
+-   Then, create server using 'createServer' method of http, and store its returned value in 'server' variable..
+-   Then, we can use 'on' method of 'server' and provide the request and response parameters in that method.
+-   Then, we can use if-else and can see whether 'request.url' is matching the required value or not.
+-   To generate the response, we using response.end method method and above which, we can define response.writeHead method and can provide the type of 	content we want to display.
+    This is because, the response can be either text of html.
+-   Then, we have to call the 'listen' method of 'server', and provide the port, localhost, and call-back method to it.
+-   The port can be any port, and localhost is mostly 127.0.0.1

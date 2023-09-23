@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <label for="input">Enter First Number : </label>
+    <input type="number" id="numb1">
+    <br>
+    <br>
+    <label for="input">Enter Second Number : </label>
+    <input type="number" id="numb2">
+    <br>
+    <br>
+    <button id="btn">Result</button>
+    <br>
+    <br>
+    <div id="result"></div>
+</body>
+<script>
+    document.getElementById('btn').addEventListener('click', ()=>{
+        let numb1 = document.getElementById('numb1').value ;
+        let numb2 = document.getElementById('numb2').value ;
+        document.getElementById('result').innerText = `The sum of ${numb1} and ${numb2} is = ${numb1 + numb2}` ;
+    }) ;
+</script>
+</html>
